@@ -4,10 +4,17 @@ TaskGenie is a task management application built with React. It allows users to 
 
 ## **Features**
 
-- **User Authentication with Auth0**: Securely log in and manage tasks with authentication provided by Auth0.
-- **Create tasks**: Add new tasks with ease using the intuitive interface.
-- **Delete tasks**: Remove tasks from your list when they're no longer needed.
-- **View task list**: Keep track of all your tasks in one convenient location.
+- **User Authentication with Auth0:** TaskGenie uses Auth0 for user authentication. This provides a secure way for users to log in to the application. Once logged in, users can view their profile information.
+
+- **Task Creation:** Users can create new tasks by filling out a form with the task details. Each task includes a title and a due date. The application validates the input to ensure that all required fields are filled in.
+
+- **Task Deletion:** Users can delete tasks when they are completed. This helps keep the task list clean and manageable.
+
+- **Task Viewing:** All tasks are displayed in a list format. This allows users to easily see all their tasks at a glance. Each task includes the task title and due date.
+
+- **Responsive Design:** TaskGenie is designed to be responsive and works well on both desktop and mobile devices.
+
+TaskGenie is a powerful tool for managing tasks. It simplifies task management and helps users stay organized and productive.
 
 ## **Installation**
 
