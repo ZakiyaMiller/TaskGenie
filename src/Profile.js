@@ -14,7 +14,7 @@ const Profile = () => {
       {isAuthenticated ? (
         <div>
           
-          <h1>User Profile</h1>
+          <h2>User Profile</h2>
           <h5 className='leftalign'>Name: {user.name}</h5>
           <h5 className='leftalign'>Email: {user.email}</h5>
 
