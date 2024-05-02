@@ -43,12 +43,7 @@ Within the "tasks" database, create a table named "tasks" with the following fie
 
 4. **Configure the application:**
    - Open the `server.js` file and replace `<username>` and `<password>` with your MySQL username and password.
-   - Alternatively, you can store these values in environment variables. Create a `.env` file in the root of your project and add the following lines:
-     ```env
-     DB_USERNAME=<username>
-     DB_PASSWORD=<password>
-     ```
-
+   
 5. **Start the server:**
 ```bash
 node server.js
