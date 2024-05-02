@@ -18,7 +18,7 @@ TaskGenie is a powerful tool for managing tasks. It simplifies task management a
 
 ## **Installation**
 
-To get started with TaskGenie, follow these steps:-
+To get started with TaskGenie, follow these steps:
 
 1. **Clone the repository**:
     
