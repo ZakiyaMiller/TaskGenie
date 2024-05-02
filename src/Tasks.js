@@ -14,28 +14,39 @@ const Tasks = () => {
     if (dueDate === '') {
       dueDate = null;
     }
-
+  
     const id = Math.max(...tasks.map((task) => task.id), 0) + 1;
   
-    // add the task to the server
+    const newTask = { id, ...task, dueDate };
+  
+    // add the task 
     fetch('http://localhost:3001/tasks', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
       },
-      body: JSON.stringify({ id, ...task, dueDate }),
+      body: JSON.stringify(newTask),
     })
-    .then(response => response.json())
+    .then(response => {
+      if (response.ok) {
+        return response.json();
+      } else {
+        window.location.reload();
+      }
+    })
     .then(data => {
       console.log(data);  // Log the added task
-      // update the local state
-      setTasks([...tasks, data]);
+
+      // update the local state with the task object returned from the server
+      //setTasks(prevTasks => [...prevTasks, data]);
+
+      alert('Task added successfully');
+      window.location.reload();
     })
     .catch((error) => {
       console.error('Error:', error);
     });
   };
-
 
   const deleteTask = (id) => {
     fetch(`http://localhost:3001/tasks/${id}`, {
@@ -44,15 +55,15 @@ const Tasks = () => {
     .then(response => response.json())
     .then(data => {
       console.log(data);  // Log the deleted task
-      // update the local state
-      setTasks(tasks.filter((task) => task.id !== id));
+  
+      // Update the state of tasks after a task is deleted
+      setTasks(tasks.filter(task => task.id !== id));
     })
     .catch((error) => {
       console.error('Error:', error);
     });
   };
 
-  
   return (
     <div>
       <Header />

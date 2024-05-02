@@ -10,7 +10,7 @@ app.use(express.json());
 const db = mysql.createConnection({
   host: 'localhost',
   user: 'root',
-  password: 'S15935746',
+  password: '12345678@',
   database: 'tasks'
 });
 
@@ -21,16 +21,20 @@ db.connect(err => {
 
 // Create
 app.post('/tasks', (req, res) => {
-  let task = req.body;
-
-  // Check if dueDate is empty and set it to null
-  if (task.dueDate === '') {
-    task.dueDate = null;
-  }
+  let task = {
+    id: req.body.id,
+    taskName: req.body.taskName,
+    dueDate: req.body.dueDate === '' ? null : req.body.dueDate,
+    // add other task fields here
+  };
 
   const query = 'INSERT INTO tasks SET ?';
   db.query(query, task, (err, result) => {
-    if (err) throw err;
+    if (err) {
+      console.error(err);
+      res.status(500).send('Server error');
+      return;
+    }
     res.send(result);
   });
 });

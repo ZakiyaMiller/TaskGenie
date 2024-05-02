@@ -7,8 +7,8 @@ const Login = () => {
   return (
     <div>
       <h2>Login</h2>
-      <p>Welcome! Please log in to access the application.</p>
-      <button onClick={() => loginWithRedirect()}>Log In</button>
+      <h5 className='leftalign'>Welcome! Please log in to access the application.</h5>
+      <h5 className='button'><button onClick={() => loginWithRedirect()}>Log In</button></h5>
     </div>
   );
 };

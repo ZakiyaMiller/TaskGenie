@@ -1,11 +1,26 @@
 .special-container {
-    background-color: #f9f9f9;
+    background-color: #091e3a;
     border-radius: 5px;
     padding: 20px;
     margin: 20px 0;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
   }
-  
+h4{
+  color:'#091e3a';
+  font-size: 170%;
+  text-align: center;
+  text-align: left;
+}
+h6{
+  font-size: larger;
+  color:#00a0a0;
+  margin: 10px;
+  margin-bottom: 20px;
+}
+.heading{
+  color: #091e3a;
+  margin-bottom: 20px;
+}
 .button-container {
     display: flex;
     justify-content: space-between;
@@ -17,7 +32,7 @@
     margin: 10px 0;
     font-size: 18px;
     color: white;
-    background-color: #007BFF;
+    background-color: #00a0a0;
     border: none;
     border-radius: 5px;
     text-decoration: none;
