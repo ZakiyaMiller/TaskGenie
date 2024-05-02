@@ -1,25 +1,26 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react';
+import { Routes, Route } from 'react-router-dom';
+import Auth0ProviderWithHistory from './Auth0ProviderWithHistory';
+import Home from './Home';
+import Profile from './Profile';
+import Login from './Login';
+import ProtectedRoute from './ProtectedRoute';
+import Tasks from './Tasks';
 
-function App() {
+
+
+const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Auth0ProviderWithHistory>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/profile" element={<Profile />} />
+        <Route path="/login" element={<Login />} />
+        <Route path="/tasks" element={<Tasks />} />
+
+      </Routes>
+    </Auth0ProviderWithHistory>
   );
-}
+};
 
 export default App;
